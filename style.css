@@ -33,11 +33,6 @@ body {
     flex-direction: column;
 }
 
-.modal {
-    border: 1px solid #333;
-    padding: 10px;
-}
-
 .book-item {
     display: flex;
     flex-direction: row;
@@ -48,7 +43,7 @@ body {
     height: 120px;
 }
 
-.book-item p {
+.item-title, .item-author, .item-pages {
     width: 150px;
     text-align: center;
 }
@@ -58,8 +53,8 @@ body {
 .modal {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 0.4rem;
+    justify-content: space-between;
+    gap: 0.5rem;
     width: 300px;
     padding: 1.2rem;
     min-height: 250px;
@@ -71,9 +66,16 @@ body {
     z-index: 2;
 }
 
+.new-book-btn {
+    border: 1px solid #333;
+    padding: 2px;
+    cursor: pointer;
+}
+
 .btn-close {
     width: 25px;
     height: 25px;
+    cursor: pointer;
     text-align: center;
     align-self: flex-end;
 }
