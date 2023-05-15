@@ -17,6 +17,7 @@ body {
 
 .header-title {
     font-size: 2.5em;
+    color: #42213D;
 }
 
 .main-container {
@@ -25,7 +26,7 @@ body {
     align-items: center;
     width: 60vw;
     gap: 10px;
-    background-color: #333;
+    background-color: #683257;
 }
 
 .book-form {
@@ -33,7 +34,7 @@ body {
     flex-direction: column;
 }
 
-.book-item {
+.book-item, .container-header {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,9 +44,35 @@ body {
     height: 120px;
 }
 
+.container-header {
+    font-size: 1.2em;
+    background-color: #42213D;
+}
+
+.container-header > p {
+    width: 150px;
+    text-align: center;
+}
+
+.read-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 150px;
+}
+
 .item-title, .item-author, .item-pages {
     width: 150px;
     text-align: center;
+}
+
+.update-icon {
+    fill: white;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }
 
 /* Modal Pop-up */
@@ -53,7 +80,7 @@ body {
 .modal {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 0.5rem;
     width: 300px;
     padding: 1.2rem;
@@ -61,13 +88,13 @@ body {
     position: absolute;
     top: 20%;
     background-color: white;
-    border: 1px solid #333;
+    border: 1px solid #683257;
     border-radius: 15px;
     z-index: 2;
 }
 
 .new-book-btn {
-    border: 1px solid #333;
+    border: 1px solid #683257;
     padding: 2px;
     cursor: pointer;
 }
