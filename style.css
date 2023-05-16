@@ -63,15 +63,22 @@ body {
     width: 150px;
 }
 
+.item-read {
+    padding: 3px;
+    text-shadow: 0 0 6px white;
+    cursor: pointer;
+}
+
 .item-title, .item-author, .item-pages {
     width: 150px;
     text-align: center;
 }
 
-.update-icon {
+.delete-icon {
     fill: white;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
     cursor: pointer;
 }
 
@@ -97,6 +104,7 @@ body {
     border: 1px solid #683257;
     padding: 2px;
     cursor: pointer;
+    box-shadow: 0 0 4px #42213D;
 }
 
 .btn-close {

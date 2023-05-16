@@ -61,20 +61,24 @@ function appendShelf(book) {
     }
     bookRead.setAttribute('data-read', myLibrary.indexOf(book));
     bookReadDiv.appendChild(bookRead);
-
     renderSVG(bookReadDiv);
-}
 
-function renderSVG (node) {
-    const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    const svgPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    bookRead.addEventListener('click', function () {
+        if (bookRead.textContent == 'Read') {
+            bookRead.textContent = 'Not read';
+        } else bookRead.textContent = 'Read';
+    })
 
-    svgIcon.classList.add('update-icon');
-    svgPath.setAttribute('d',
-    'M12,18A6,6 0 0,1 6,12C6,11 6.25,10.03 6.7,9.2L5.24,7.74C4.46,8.97 4,10.43 4,12A8,8 0 0,0 12,20V23L16,19L12,15M12,4V1L8,5L12,9V6A6,6 0 0,1 18,12C18,13 17.75,13.97 17.3,14.8L18.76,16.26C19.54,15.03 20,13.57 20,12A8,8 0 0,0 12,4Z');
-
-    svgIcon.appendChild(svgPath);
-    return node.appendChild(svgIcon);
+    function renderSVG (node) {
+        const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        const svgPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        svgIcon.classList.add('delete-icon');
+        svgPath.setAttribute('d',
+        'M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z');
+        svgIcon.appendChild(svgPath);
+        svgIcon.setAttribute('data-delete', myLibrary.indexOf(book));
+        return node.appendChild(svgIcon);
+    }
 }
 
 newbookBtn.addEventListener('click', function () {
@@ -87,7 +91,8 @@ closeBtn.addEventListener('click', function () {
     overlay.classList.add('hidden');
 })
 
-addbookBtn.addEventListener('click', function () {
+addbookBtn.addEventListener('click', function (e) {
+    e.preventDefault();
     addBook(formTitle.value, formAuthor.value, formPages.value, formRead.checked);
     appendShelf(myLibrary[i]);
     i++;
