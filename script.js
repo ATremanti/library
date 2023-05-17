@@ -61,7 +61,10 @@ function appendShelf(book) {
     }
     bookRead.setAttribute('data-read', myLibrary.indexOf(book));
     bookReadDiv.appendChild(bookRead);
-    renderSVG(bookReadDiv);
+    const svgFlex = document.createElement('div');
+    svgFlex.classList.add('svg-flex');
+    bookReadDiv.appendChild(svgFlex);
+    renderSVG(svgFlex);
 
     bookRead.addEventListener('click', function () {
         if (bookRead.textContent == 'Read') {

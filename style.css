@@ -74,11 +74,16 @@ body {
     text-align: center;
 }
 
+.svg-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .delete-icon {
     fill: white;
-    width: 30px;
-    height: 30px;
-    border: 1px solid white;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
 
@@ -101,7 +106,8 @@ body {
 }
 
 .new-book-btn {
-    border: 1px solid #683257;
+    border: 1px solid #42213D;
+    color: #42213D;
     padding: 2px;
     cursor: pointer;
     box-shadow: 0 0 4px #42213D;
