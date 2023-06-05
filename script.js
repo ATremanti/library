@@ -102,8 +102,7 @@ closeBtn.addEventListener('click', function () {
     overlay.classList.add('hidden');
 })
 
-addbookBtn.addEventListener('click', function (e) {
-    e.preventDefault();
+addbookBtn.addEventListener('click', function () {
     addBook(formTitle.value, formAuthor.value, formPages.value, formRead.checked);
     appendShelf(myLibrary[i]);
     i++;
@@ -111,5 +110,3 @@ addbookBtn.addEventListener('click', function (e) {
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
 })
-
-console.log(myLibrary)
